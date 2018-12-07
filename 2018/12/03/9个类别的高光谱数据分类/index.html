@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>shikunliu</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="gov-edu,"> 
+    <meta name="description" content="以学院为单位进行划分12import pandas as pdimport numpy as np
+导入学生手册考试成绩数据1df = pd.read_excel(&#34;学生手册考试成绩.xlsx&#34;)
+,"> 
+    <meta name="author" content="shikunliu"> 
+    <link rel="alternative" href="atom.xml" title="shikunliu" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">9个类别的高光谱数据分类</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <!-- <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div> -->
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">9个类别的高光谱数据分类</h1>
+        <div class="stuff">
+            <span>十二月 03, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Spectral-Python-SPy-的笔记介绍及安装"><a href="#Spectral-Python-SPy-的笔记介绍及安装" class="headerlink" title="Spectral Python (SPy)的笔记介绍及安装"></a>Spectral Python (SPy)的笔记介绍及安装</h1><p>Spectral Python（SPy）是一个用于处理高光谱图像数据的纯Python模块。</p>
+<p>具有读取，显示，操作和分类高光谱图像的功能。 它可以从Python命令提示符或通过Python脚本交互使用。SPy是GNU通用公共许可证下的免费开源软件。 要查看一些如何使用SPy的示例，可以直接跳到显示数据或光谱算法的文档部分。主类和函数的分类列表在类/函数词汇表中。 您可以从GitHub或Python Package Index（PyPI）下载SPy。</p>
+<p>文档结构<br>Spectral Python用户指南<br>介绍<br>安装<br>读取HSI数据文件<br>显示数据<br>光谱算法<br>光谱类库<br>类/功能词汇表<br>类/函数文档</p>
+<h3 id="Spectral-Python用户指南"><a href="#Spectral-Python用户指南" class="headerlink" title="Spectral Python用户指南"></a>Spectral Python用户指南</h3><p>本用户指南以教程形式介绍各种SPy功能。 如果您想测试指南中提供的命令，您应该下载以下样本数据文件，这些文件与1992年在印第安纳州收集的精心研究的AVIRIS高光谱图像相关联。</p>
+<p>本指南中介绍的许多示例都是累积性的，取决于以前的命令和模块导入，发出的命令成功。 虽然导入整个模块命名空间的内容通常不是一个好主意，但为了简洁起见，用户手册中的示例假设已经from spectral import *。</p>
+<h3 id="Installing-SPy"><a href="#Installing-SPy" class="headerlink" title="Installing SPy"></a>Installing SPy</h3><p>SPy依赖关系<br>SPy需要Python，并依赖于其他几个免费的Python模块。 在安装SPy之前，您应该确保符合它的依赖关系。 虽然您可以使用SPy仅使用Python和NumPy来处理高光谱数据，但是如果要使用任何SPy的图形功能，还需要其他几个模块。</p>
+<p>笔记：<br>（1）：除了view_cube和view_nd之外，所有的SPy函数都可以使用Python 3.3+。<br>（2）：如果调用view_cube或view_nd，则是必需的。<br>从SPy版本0.10起，IPython被用来提供交互式的GUI窗口。 要在IPython中使用SPy，您需要以“pylab”模式启动IPython（请参阅启动IPython）。</p>
+<p>Installing from a distribution package<br>SPy是作为Python源代码发行版分发的，可以从Python Package Index（PyPI）或GitHub上的SPy Project Page下载。 源代码发行版将解压缩到一个名为spectral-x.y的目录，其中x.y是SPy版本号。 要安装SPy，请在解压后的目录中打开一个控制台，然后输入以下命令：</p>
+<p>python setup.py install</p>
+<p>请注意，如果您使用的是基于Unix的系统，则需要以root身份登录，或者使用“sudo”作为前言（除非使用-d选项将其安装到本地目录）。</p>
+<p>Installing with pip or Distribute<br>如果您的系统上安装了Distribute（或已弃用的Setuptools）或pip，则不需要明确下载最新的SPy版本。 如果您安装了分发，只需键入</p>
+<p>easy_install spectral</p>
+<p>或者</p>
+<p>pip install spectral</p>
+<p>请注意，您的pip二进制文件可能会有不同的命名（例如，“pip-python”）。 再次，您可能需要以root身份登录，或者如果您使用的是基于Unix的系统，请使用“sudo”。</p>
+<p>Installing from the Git source code repository</p>
+<p>最新版本的SPy源代码驻留在GitHub源代码库中。 尽管最新的源代码可能不如最新发布的版本稳定，但它通常具有更新的功能和错误修复。 要从Git存储库下载最新版本的SPy，请cd到您想要查看源代码的目录，然后键入以下命令：</p>
+<p>git clone <a href="https://github.com/spectralpython/spectral.git" target="_blank" rel="noopener">https://github.com/spectralpython/spectral.git</a></p>
+<p>配置SPy</p>
+<p>由于高光谱数据文件可能相当大，因此可能将所有HSI数据存储在一个或多个特定目录中。 为了避免在试图打开SPy中的HSI文件时输入绝对路径名，可以定义一个SPECTRAL_DATA环境变量，SPY将使用这个变量来查找映像文件（如果在当前目录中找不到）。 SPECTRAL_DATA应该是以冒号分隔的目录路径列表。</p>
+<h3 id="什么是高光谱图像？如何获取？"><a href="#什么是高光谱图像？如何获取？" class="headerlink" title="什么是高光谱图像？如何获取？"></a>什么是高光谱图像？如何获取？</h3><p>高光谱图像并非普通的二维图像，而是一种三维数据。</p>
+<p>1.成像原理：星载光谱成像仪会在沿着轨道飞信时，对地表发出不同波段的光谱信号。而地表不同物质对每一个波段的光谱信号的吸收率和反射率都不同，所以星载光谱成像仪根据地表所有物质对每一个波段的光谱的不同反馈信号，可以绘出一副地表的二维图像，加上其他的波段的二维图像，我们就获得了一个三维数据。<br>注意：图中这个三维数据的每一层对应一个波段的光谱信号。</p>
+<p>2.数据表现形式：三维数据中每一个像素，从光谱维这个角度来看，可以看成一种物质在不同波段光谱信号下的表现，如下图中的土壤、水体、植被等。</p>
+<p>3.分类原理：不同物质在不同波段光谱信号下的不同表现，可以绘制成一条关于光谱波段和光谱值之间的曲线，根据曲线的差异，我们可以高光谱图像中不同物质进行分类。分类方法有很多，如SVM、稀疏表示。</p>
+<p>稀疏表示</p>
+<p>1.稀疏系数： 先看到右边的α, 白色小格子表示0，有色小格子表示非0数(0,1)，稀疏的意思就是非零系数很少的含义。<br>2.字典：相信大家在做科研的时候，应该都听说过字典Dictionary，那什么是字典呢？字典，从名称来看，可以用来查询的字典，那查询什么呢？查询（或者叫匹配）字典当中的训练样本。训练样本是一种模版，是一种已知类别的样本。<br>字典的构成：我现在告诉你字典的一列表示一个训练样本，它可以属于某一个类，那么图中的M列就有M个训练样本。结合前面的高光谱图像知识，高光谱图像数据的一个像素就相当于字典中的一列（或者一个训练样本）了。现在你应该大概知道怎么获取训练样本了吧。<br>字典的构建：没错，从高光谱图像数据中按比例为每一个类别的所有样本随机选取像素（采样）作为训练样本，其他就作为测试样本（图中的x表示一个测试样本）。样本的行的数值表示物质在不同波段光谱下的表现。</p>
+<p>3.稀疏系数如何表示样本： 如果把非零数有色格子在系数中的行数表示测试样本x在字典D中匹配到的训练样本（模版）对应的列数 的相似性，那相似性最大的那个列数（或行数）所属的列是不是就是我们的最佳分类结果？是的，这就是稀疏表示的概念。</p>
+<p>还要补充一下：这里的样本可以是什么呢？样本一直会是以一个向量的形式表示的。对于高光谱图像，样本就可以是一个光谱维的像素。对于人脸识别，样本就可以是一张二维人脸转换成一维之后的向量。其他的就依此类推了。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>shikunliu</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="gov-edu,"> 
+    <meta name="description" content="以学院为单位进行划分12import pandas as pdimport numpy as np
+导入学生手册考试成绩数据1df = pd.read_excel(&#34;学生手册考试成绩.xlsx&#34;)
+,"> 
+    <meta name="author" content="shikunliu"> 
+    <link rel="alternative" href="atom.xml" title="shikunliu" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <!-- <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div> -->
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十二月 03, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="以学院为单位进行划分"><a href="#以学院为单位进行划分" class="headerlink" title="以学院为单位进行划分"></a>以学院为单位进行划分</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<h2 id="导入学生手册考试成绩数据"><a href="#导入学生手册考试成绩数据" class="headerlink" title="导入学生手册考试成绩数据"></a>导入学生手册考试成绩数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_excel(<span class="string">"学生手册考试成绩.xlsx"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="预处理成绩数据dtype"><a href="#预处理成绩数据dtype" class="headerlink" title="预处理成绩数据dtype"></a>预处理成绩数据dtype</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'总成绩'</span>].replace(<span class="string">'缺考'</span>,<span class="string">'-1'</span>,inplace=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">u'总成绩'</span>]=df[<span class="string">u'总成绩'</span>].astype(<span class="string">'int64'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="创建学院信息"><a href="#创建学院信息" class="headerlink" title="创建学院信息"></a>创建学院信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data = np.array([<span class="string">'法政与公共管理学院'</span>,<span class="string">'国际文化交流学院'</span>, <span class="string">'化学与材料科学学院'</span>, <span class="string">'教育学院'</span> , </span><br><span class="line">                 <span class="string">'历史文化学院'</span>,<span class="string">'旅游系'</span>,<span class="string">'马克思主义学院'</span>,<span class="string">'美术与设计学院'</span>,<span class="string">'软件学院'</span>,<span class="string">'商学院'</span>,</span><br><span class="line">                 <span class="string">'生命科学学院'</span>,<span class="string">'数学与信息科学学院'</span>,<span class="string">'体育学院'</span>,<span class="string">'外国语学院'</span>,<span class="string">'文学院'</span>,<span class="string">'物理科学与信息工程学院'</span>,</span><br><span class="line">                 <span class="string">'新闻传播学院'</span>,<span class="string">'信息技术学院'</span>,<span class="string">'音乐学院'</span>,<span class="string">'职业技术学院'</span>,<span class="string">'中燃工学院'</span>,<span class="string">'资源与环境科学学院'</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">college = pd.Series(data)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">H = pd.DataFrame(np.random.randn(<span class="number">22</span>,<span class="number">8</span>),columns=[<span class="string">"学院名称"</span>,<span class="string">'总人数'</span>,<span class="string">'通过人数'</span>,<span class="string">'80分以上'</span>,<span class="string">'75分以上'</span>,<span class="string">'未通过人数'</span>,<span class="string">'及格率'</span>,<span class="string">'优秀率'</span>])</span><br></pre></td></tr></table></figure>
+<h2 id="生成22个学院的成绩表"><a href="#生成22个学院的成绩表" class="headerlink" title="生成22个学院的成绩表"></a>生成22个学院的成绩表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">22</span>):</span><br><span class="line">    m = df.loc[(df[<span class="string">'学院名称'</span>] == college[i]), [<span class="string">'姓名'</span>, <span class="string">'学号'</span>, <span class="string">'学院名称'</span>, <span class="string">'班级'</span>, <span class="string">'总成绩'</span>, <span class="string">'认证状态'</span>]]</span><br><span class="line">    a=m.loc[(df[<span class="string">'总成绩'</span>] &gt;= <span class="number">80</span>)].count()[<span class="number">0</span>]</span><br><span class="line">    b=m.loc[(df[<span class="string">'总成绩'</span>] &gt;= <span class="number">75</span>)].count()[<span class="number">0</span>]</span><br><span class="line">    c=m.loc[(df[<span class="string">'总成绩'</span>] &gt;= <span class="number">70</span>)].count()[<span class="number">0</span>]</span><br><span class="line">    d=m.count()[<span class="number">0</span>]</span><br><span class="line">    e=format(float(a)/float(d),<span class="string">'.3f'</span>)</span><br><span class="line">    g=format(float(c)/float(d),<span class="string">'.3f'</span>)</span><br><span class="line">    h=d-c</span><br><span class="line">    H.loc[i]=[college[i],d,c,a,b,h,g,e]</span><br><span class="line">    m.reset_index(drop = <span class="keyword">True</span>)<span class="comment">#重建索引</span></span><br><span class="line">    <span class="comment">#m.to_excel(college[i]+".xlsx", sheet_name='学生手册考试成绩')</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">H.to_excel(<span class="string">"学院分析.xlsx"</span>, sheet_name=<span class="string">'学生手册考试成绩'</span>)</span><br></pre></td></tr></table></figure>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
